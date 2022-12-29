@@ -238,7 +238,7 @@ export default class RNPickerSelect extends PureComponent {
         if (!showPicker) {
             Keyboard.dismiss();
         }
-
+        if (this['pickerRef'] && Platform.OS == 'android') this.pickerRef.focus();
         const animationType =
             modalProps && modalProps.animationType ? modalProps.animationType : 'slide';
 
